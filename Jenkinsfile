@@ -25,9 +25,9 @@ node{
     }
 
     stage('Run Docker Container on Private EC2'){
-        def dockerRm = 'docker rm -f app_blog'
+        def dockerRm = 'docker rm -f app_event'
         def dockerRmI = 'docker rmi anishmoktan/devbops_event'
-        def dockerRun = 'docker run -p 8092:80 -d --name app_blog anishmoktan/devbops_event'
+        def dockerRun = 'docker run -p 8092:80 -d --name app_event anishmoktan/devbops_event'
         sshagent(['docker-server']) {
             sh "ssh -o StrictHostKeyChecking=no ec2-user@172.25.11.85 ${dockerRm}"
             sh "ssh -o StrictHostKeyChecking=no ec2-user@172.25.11.85 ${dockerRmI}"
