@@ -56,16 +56,16 @@ class BasicTestCase(unittest.TestCase):
         print(data)
         assert data['Result'] == True
 
-#     def test_4_delete(self):
-#         req = {
-#             'Event_name': "QA_TEST"
-#         }
+    def test_4_delete(self):
+        req = {
+            'Event_name': "QA_TEST"
+        }
 
-#         rv = self.app.post('/event-delete', json=req)
-#         data = json.loads(rv.data)
-#         #print(data['Status'], data['Error'])
-#         print(data)
-#         assert data['Result'] == True
+        rv = self.app.post('/event-delete', json=req)
+        data = json.loads(rv.data)
+        #print(data['Status'], data['Error'])
+        print(data)
+        assert data['Result'] == True
 
 if __name__ == '__main__':
     unittest.main()
