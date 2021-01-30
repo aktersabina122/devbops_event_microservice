@@ -164,4 +164,4 @@ Response body:
   "Description": "All Events from database",
   "EventDB": [dicts]
 }
-```
+```'
